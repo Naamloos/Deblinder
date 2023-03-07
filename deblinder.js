@@ -50,7 +50,7 @@ async function likeUser(id)
  * @param {Element} teaserElement 
  * @param {*} profile 
  */
-async function InjectInfo(teaserElement, profile)
+async function InjectInfo(teaserElement, profile, id)
 {
     let name = profile.name;
     let age = Math.floor((new Date() - new Date(profile.birth_date)) / (1000 * 60 * 60 * 24 * 365)); // approximate age from ms to years
@@ -62,6 +62,20 @@ async function InjectInfo(teaserElement, profile)
     injection.style.color = "#FFFFFF";
     injection.style.padding = "5px";
     injection.style.borderRadius = "10px";
+    
+    let like = document.createElement('button');
+    like.style.cursor = "pointer";
+    like.style.padding = "10px";
+    like.style.display = "inline-block";
+    like.title = `Like ${name}'s profile`;
+    
+    like.onclick = async () => 
+    {
+        likeUser(id);
+        alert(`You liked ${name}! reload tinder to see them appear in your matches.`);
+        teaserElement.parentElement.removeChild(teaserElement);
+    }
+
     title.innerHTML = '';
     title.appendChild(injection);
 }
@@ -96,7 +110,7 @@ async function unblurLikes()
 
             teaserImage = user.photos[0].url;
 
-            InjectInfo(teaserElement, user);
+            InjectInfo(teaserElement, user, id);
         }
 
         teaserElement.style.backgroundImage = `url(${teaserImage})`;
