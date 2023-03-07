@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Deblinder",
+  "version": "1.0",
+  "description": "Deblur Tinder photos.",
+  "icons": {
+    "48": "icons/icon-48x48.png"
+  },
+  "permissions": ["webRequest", "webRequestBlocking", "webNavigation", "https://api.gotinder.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://tinder.com/*"],
+      "js": ["deblinder.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "deblinder@naamloos.dev"
+    }
+  }
+  
+}
