@@ -55,19 +55,30 @@ async function InjectInfo(teaserElement, profile, id)
     let name = profile.name;
     let age = Math.floor((new Date() - new Date(profile.birth_date)) / (1000 * 60 * 60 * 24 * 365)); // approximate age from ms to years
 
+    teaserElement.style.cursor = "default";
+    teaserElement.onclick = ()=>{};
+
     let title = teaserElement.parentElement.querySelectorAll('div:nth-child(2)')[0];
+    title.style.cursor = "default";
     let injection = document.createElement('p');
     injection.innerHTML = `${name} (${age})`;
     injection.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
     injection.style.color = "#FFFFFF";
     injection.style.padding = "5px";
     injection.style.borderRadius = "10px";
+    injection.style.cursor = "default";
+    injection.style.display = "inline";
     
     let like = document.createElement('button');
     like.style.cursor = "pointer";
     like.style.padding = "10px";
-    like.style.display = "inline-block";
     like.title = `Like ${name}'s profile`;
+    like.innerHTML = '🤍';
+    like.style.borderRadius = '100%';
+    like.style.backgroundColor = '#FD326C';
+    like.style.float = 'right';
+    like.style.width = '40px';
+    like.style.height = '40px';
     
     like.onclick = async () => 
     {
@@ -78,6 +89,7 @@ async function InjectInfo(teaserElement, profile, id)
 
     title.innerHTML = '';
     title.appendChild(injection);
+    title.appendChild(like);
 }
 
 async function unblurLikes()
