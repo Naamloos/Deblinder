@@ -122,6 +122,8 @@ async function unblurLikes()
 
             teaserImage = user.photos[0].url;
 
+            console.log(user);
+
             InjectInfo(teaserElement, user, id);
         }
 
