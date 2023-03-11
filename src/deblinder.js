@@ -6,7 +6,7 @@
 // @version     1.0
 // @author      Naamloos
 // @description Deblinder- Deblur Tinder likes
-// @downloadURL 
+// @downloadURL https://raw.githubusercontent.com/Naamloos/Deblinder/master/src/deblinder.js
 // ==/UserScript==
 
 async function fetchTeasers() 
