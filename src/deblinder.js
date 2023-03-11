@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name        Deblinder
+// @namespace   Naamloos
+// @match       *://tinder.com/*
+// @grant       none
+// @version     1.0
+// @author      Naamloos
+// @description Deblinder- Deblur Tinder likes
+// @downloadURL 
+// ==/UserScript==
+
 async function fetchTeasers() 
 {
     let response = await fetch('https://api.gotinder.com/v2/fast-match/teasers', 
