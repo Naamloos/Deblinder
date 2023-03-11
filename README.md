@@ -14,7 +14,11 @@ This source code was partially based on the following script: https://github.com
 6. Open Tinder, go to your likes and click the convenient `Deblur Likes` button in the bottom right.
 
 ### Userscript install
-// TODO
+1. Install a userscript manager. (TamperMonkey works well for Chromium-based browsers!)
+2. Copy all the text on the following page: https://raw.githubusercontent.com/Naamloos/Deblinder/master/src/deblinder.js
+3. Create a new script in your UserScript manager
+4. Paste all content
+5. Open Tinder, go to your likes and click the convenient `Deblur Likes` button in the bottom right.
 
 ## Why the name?
 "Tinder" + "Deblur" = Deblinder, which is an accurate name since it "deblinds" your likes.
